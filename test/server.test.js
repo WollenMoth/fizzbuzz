@@ -28,4 +28,13 @@ describe("Unit Tests for server", () => {
         expect(res.body.mission).toBe(mission);
         expect(res.body.quantity).toBeDefined();
     });
+
+    test("GET /v1/explorers/usernames/:mission", async () => {
+        const mission = "node";
+        const res = await http.get(`/v1/explorers/usernames/${mission}`);
+
+        expect(res.status).toBe(200);
+        expect(res.body.mission).toBe(mission);
+        expect(res.body.explorers.length).toBeDefined();
+    });
 });
