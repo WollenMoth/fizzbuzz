@@ -1,21 +1,20 @@
 const Reader = require("./lib/utils/Reader");
+const ExplorerService = require("./lib/services/ExplorerService");
 
 const explorers = Reader.readJsonFile("explorers.json");
 
-// Part 2: Get the quantity of explorers names in node
-const explorersInNode = explorers.filter(
-    (explorer) => explorer.mission == "node"
+const explorersInNode = ExplorerService.filterByMission(explorers, "node");
+console.log(explorersInNode);
+const amountOfExplorersInNode = ExplorerService.getAmountOfExplorersByMission(
+    explorers,
+    "node"
 );
-//console.log(explorersInNode.length)
-
-// Part4: Get the explorer's usernames in Node
-const explorersInNodeToGetUsernames = explorers.filter(
-    (explorer) => explorer.mission == "node"
+console.log(amountOfExplorersInNode);
+const usernamesInNode = ExplorerService.getExplorersUsernamesByMission(
+    explorers,
+    "node"
 );
-const usernamesInNode = explorersInNodeToGetUsernames.map(
-    (explorer) => explorer.githubUsername
-);
-//console.log(usernamesInNode)
+console.log(usernamesInNode);
 
 // DEAD CODE: Part 5,6,7, please remove this and go to Part 8!
 
