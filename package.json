@@ -2,9 +2,10 @@
   "name": "fizzbuzz",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "jest",
+    "server": "node app",
+    "test": "jest --testTimeout=10000",
     "linter": "eslint .",
     "linter-fix": "eslint . --fix"
   },
@@ -13,6 +14,10 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.14.0",
-    "jest": "^28.0.0"
+    "jest": "^28.0.0",
+    "supertest": "^6.2.2"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
   }
 }
