@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "linter": "eslint .",
+    "linter-fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "wollenmoth",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.14.0",
     "jest": "^28.0.0"
   }
 }
