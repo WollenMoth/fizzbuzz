@@ -19,4 +19,13 @@ describe("Unit Tests for server", () => {
             res.body.every((explorer) => explorer.mission === mission)
         ).toBeTruthy();
     });
+
+    test("GET /v1/explorers/amount/:mission", async () => {
+        const mission = "node";
+        const res = await http.get(`/v1/explorers/amount/${mission}`);
+
+        expect(res.status).toBe(200);
+        expect(res.body.mission).toBe(mission);
+        expect(res.body.quantity).toBeDefined();
+    });
 });
