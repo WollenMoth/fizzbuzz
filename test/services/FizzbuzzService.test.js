@@ -1,6 +1,34 @@
 const FizzbuzzService = require("../../lib/services/FizzbuzzService");
 
 describe("Unit Tests for FizzbuzzService", () => {
+    test("Return Fizzbuzz if number is divisible by 3 and 5", () => {
+        const number = 15;
+        const validation = FizzbuzzService.applyValidationInNumber(number);
+
+        expect(validation).toBe("FIZZBUZZ");
+    });
+
+    test("Return Fizz if number is divisible by 3", () => {
+        const number = 3;
+        const validation = FizzbuzzService.applyValidationInNumber(number);
+
+        expect(validation).toBe("FIZZ");
+    });
+
+    test("Return Buzz if number is divisible by 5", () => {
+        const number = 5;
+        const validation = FizzbuzzService.applyValidationInNumber(number);
+
+        expect(validation).toBe("BUZZ");
+    });
+
+    test("Return number if number is not divisible by 3 or 5", () => {
+        const number = 7;
+        const validation = FizzbuzzService.applyValidationInNumber(number);
+
+        expect(validation).toBe(7);
+    });
+
     test("Assign Fizzbuzz if score is divisible by 3 and 5", () => {
         const explorer = { score: 15 };
 
