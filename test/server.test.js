@@ -37,4 +37,13 @@ describe("Unit Tests for server", () => {
         expect(res.body.mission).toBe(mission);
         expect(res.body.explorers.length).toBeDefined();
     });
+
+    test("GET /v1/fizzbuzz/:score", async () => {
+        const score = 15;
+        const res = await http.get(`/v1/fizzbuzz/${score}`);
+
+        expect(res.status).toBe(200);
+        expect(res.body.score).toBe(score);
+        expect(res.body.trick).toBe("FIZZBUZZ");
+    });
 });
